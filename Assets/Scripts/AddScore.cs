@@ -8,6 +8,7 @@ public class AddScore : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            AudioManager.instance.scoreSFX();
             ScoreManager.instance.UpdateScore();
         }
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager instance;
     public AudioSource soundSource;
 
     public AudioClip bgm;
@@ -11,6 +12,15 @@ public class AudioManager : MonoBehaviour
     public AudioClip death;
     public AudioClip click;
     public AudioClip score;
+    public AudioClip power;
+
+    void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
 
     public void playBGM()
     {
@@ -35,6 +45,11 @@ public class AudioManager : MonoBehaviour
     public void scoreSFX()
     {
         soundSource.PlayOneShot(score);
+    }
+
+    public void powerSFX()
+    {
+        soundSource.PlayOneShot(power);
     }
 
 }

@@ -26,6 +26,7 @@ public class CandyPower : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            AudioManager.instance.powerSFX();
             ScoreManager.instance.CandyPower();
             Destroy(gameObject);
         }

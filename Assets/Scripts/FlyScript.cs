@@ -21,6 +21,7 @@ public class FlyScript : MonoBehaviour
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
+            AudioManager.instance.jumpSFX();
             _rb.velocity = Vector2.up * _velocity;
         }
     }
@@ -32,6 +33,7 @@ public class FlyScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        AudioManager.instance.deathSFX();
         GameManager.instance.GameOver();
     }
 

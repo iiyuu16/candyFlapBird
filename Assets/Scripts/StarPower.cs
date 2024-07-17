@@ -26,6 +26,7 @@ public class StarPower : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            AudioManager.instance.powerSFX();
             DestroyAllObstacles();
             Destroy(gameObject);
         }
